@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="7.118" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="DemoStarting" name="User Testing Checkbox Demo" time="6.919">
+<system-out><![CDATA[
+Given user click on "Input Forms"...........................................passed
+And user click on "Checkbox Demo" link......................................passed
+And user click on "Option 1"................................................passed
+]]></system-out>
+</testcase>
+</testsuite>
