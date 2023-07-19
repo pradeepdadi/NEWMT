@@ -1,10 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="7.118" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="DemoStarting" name="User Testing Checkbox Demo" time="6.919">
+<testsuite name="Cucumber" time="29.588" tests="3" skipped="0" failures="0" errors="0">
+<testcase classname="DemoStarting" name="User Testing Simple for Demo" time="15.4">
+<system-out><![CDATA[
+Given user click on "Input Forms"...........................................passed
+And user click on "Simple Form Demo" link...................................passed
+And user enter "Shravan" text into "Please enter your Message"..............passed
+And user click on "Show Message" button.....................................passed
+And user enter "123" text into "sum1".......................................passed
+And user enter "456" text into "sum2".......................................passed
+And user click on "Get Total" button........................................passed
+And user click on "Demo Home" link..........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="DemoStarting" name="User Testing Checkbox Demo" time="6.44">
 <system-out><![CDATA[
 Given user click on "Input Forms"...........................................passed
 And user click on "Checkbox Demo" link......................................passed
 And user click on "Option 1"................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="DemoStarting" name="Start Demo Page" time="6.984">
+<system-out><![CDATA[
+Given user click on "Input Forms"...........................................passed
+And user click on "Simple Form Demo" link...................................passed
+And user enter "Pradeep" text into "Please enter your Message"..............passed
+And user click on "Show Message" button.....................................passed
 ]]></system-out>
 </testcase>
 </testsuite>
