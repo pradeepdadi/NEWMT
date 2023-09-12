@@ -1,30 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="29.588" tests="3" skipped="0" failures="0" errors="0">
-<testcase classname="DemoStarting" name="User Testing Simple for Demo" time="15.4">
+<testsuite name="Cucumber" time="46.67" tests="2" skipped="0" failures="0" errors="0">
+<testcase classname="AddingEmployee" name="Admin User Adding Employees" time="26.881">
 <system-out><![CDATA[
-Given user click on "Input Forms"...........................................passed
-And user click on "Simple Form Demo" link...................................passed
-And user enter "Shravan" text into "Please enter your Message"..............passed
-And user click on "Show Message" button.....................................passed
-And user enter "123" text into "sum1".......................................passed
-And user enter "456" text into "sum2".......................................passed
-And user click on "Get Total" button........................................passed
-And user click on "Demo Home" link..........................................passed
+Given user enter "Admin" text into "Username"...............................passed
+When user enter "admin123" text into "Password".............................passed
+And user click on "Login" button............................................passed
+And user click on "PIM".....................................................passed
+And user click on "Add" button..............................................passed
+And user enter "Pradeep" text into "First Name".............................passed
+And user enter "Deepu" text into "Middle Name"..............................passed
+And user enter "Dadi" text into "Last Name".................................passed
+And user click on "Save" button.............................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="DemoStarting" name="User Testing Checkbox Demo" time="6.44">
+<testcase classname="AdminLogin" name="Admin User login into HRM Portal" time="19.511">
 <system-out><![CDATA[
-Given user click on "Input Forms"...........................................passed
-And user click on "Checkbox Demo" link......................................passed
-And user click on "Option 1"................................................passed
-]]></system-out>
-</testcase>
-<testcase classname="DemoStarting" name="Start Demo Page" time="6.984">
-<system-out><![CDATA[
-Given user click on "Input Forms"...........................................passed
-And user click on "Simple Form Demo" link...................................passed
-And user enter "Pradeep" text into "Please enter your Message"..............passed
-And user click on "Show Message" button.....................................passed
+Given user enter "Admin" text into "Username"...............................passed
+When user enter "admin123" text into "Password".............................passed
+And user click on "Login" button............................................passed
 ]]></system-out>
 </testcase>
 </testsuite>

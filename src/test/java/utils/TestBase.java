@@ -1,10 +1,9 @@
-package utils;
+package Utils;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.time.Duration;
 import java.util.Properties;
-
+import java.time.Duration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -18,11 +17,11 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TestBase {
 
-	public WebDriver driver;
+    public WebDriver driver;
 
     public WebDriver WebDriverManager() throws IOException {
-    	//FIS if for reading files 
-        FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "/src/test/resources/global.properties");
+        FileInputStream fis = new FileInputStream(
+                System.getProperty("user.dir") + "/src/test/resources/global.properties");
         Properties prop = new Properties();
         prop.load(fis);
         String url = prop.getProperty("url");
@@ -43,23 +42,18 @@ public class TestBase {
                 WebDriverManager.edgedriver().setup();
                 EdgeOptions options = new EdgeOptions();
                 options.addArguments("--start-maximized", "incognito", "disable-infobars");
-                
-                //"--headless=new"
+
+                // "--headless=new"
                 driver = new EdgeDriver(options);
-            }
-            else if (browser.equalsIgnoreCase("Firefox")) {
+            } else if (browser.equalsIgnoreCase("Firefox")) {
                 WebDriverManager.firefoxdriver().setup();
                 FirefoxOptions options = new FirefoxOptions();
                 options.addArguments("--start-maximized", "incognito", "disable-infobars");
-                
-                //"--headless=new"
+
+                // "--headless=new"
                 driver = new FirefoxDriver(options);
-            }
-            else if (browser.equalsIgnoreCase("Safari")) {
+            } else if (browser.equalsIgnoreCase("Safari")) {
                 WebDriverManager.safaridriver().setup();
-                //SafariOptions options = new SafariOptions();              
-                //options.addArguments("--start-maximized", "incognito", "disable-infobars");
-                                //"--headless=new"
                 driver = new SafariDriver();
                 driver.manage().window().maximize();
             }
@@ -70,8 +64,7 @@ public class TestBase {
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
             driver.get(url);
         }
-
         return driver;
-
     }
+
 }

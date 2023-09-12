@@ -1,4 +1,4 @@
-package stepDefinitions;
+package StepDefinitions;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,7 +10,7 @@ import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.BeforeAll;
 import io.cucumber.java.Scenario;
-import utils.TestContextSetup;
+import Utils.TestContextSetup;
 
 public class Hooks {
     public TestContextSetup testcontextsetup;
@@ -18,9 +18,7 @@ public class Hooks {
     public Hooks(TestContextSetup testcontextsetup) {
         this.testcontextsetup = testcontextsetup;
     }
-
-    // Below method is used for deleting old Report files
-    @BeforeAll
+      @BeforeAll
     public static void clearOldFiles() throws IOException {
 
         File file = new File(System.getProperty("user.dir") + "/test-output/Reports");
@@ -30,12 +28,12 @@ public class Hooks {
 
     @After
     public void afterScenario() throws IOException {
-        testcontextsetup.testBase.WebDriverManager().quit();
+        testcontextsetup.testbase.WebDriverManager().quit();
     }
-
-    @AfterStep
-    public void addScreenShot(Scenario scenario) throws IOException {
-        WebDriver driver = testcontextsetup.testBase.WebDriverManager();
+      @AfterStep
+    public void addScreenShot(Scenario scenario) throws IOException, InterruptedException {
+        Thread.sleep(500);
+        WebDriver driver = testcontextsetup.testbase.WebDriverManager();
         File sourcePath = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         byte[] fileContent = FileUtils.readFileToByteArray(sourcePath);
         scenario.attach(fileContent, "image/png", "ScreenShot");
